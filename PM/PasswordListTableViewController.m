@@ -1,65 +1,22 @@
 //
-//  GroupListTableViewController.m
+//  PasswordListTableViewController.m
 //  PM
 //
-//  Created by Apple on 15/12/13.
+//  Created by Apple on 15/12/20.
 //  Copyright © 2015年 Apple. All rights reserved.
 //
 
-#import "GroupListTableViewController.h"
-#import "Password.h"
-#import "Group.h"
-#import "AddViewController.h"
 #import "PasswordListTableViewController.h"
 
-@interface GroupListTableViewController ()
-
-@property NSMutableArray *groups;
+@interface PasswordListTableViewController ()
 
 @end
 
-@implementation GroupListTableViewController
-
-- (IBAction) unwindToList:(UIStoryboardSegue *)segue{
-    AddViewController *source=[segue sourceViewController];
-    Password *newp = source.newp;
-    if([self isGroups:newp]==-1){
-        Group *newgroup =[[Group alloc] init];
-        newgroup.groupName=newp.groupName;
-        [self.groups addObject:newgroup];
-        [newgroup.passwords addObject:newp];
-    }
-    else{
-        NSInteger index=[self isGroups:newp];
-        Group *group = [self.groups objectAtIndex:index];
-        [group.passwords addObject:newp];
-    }
-    [self.tableView reloadData];
-    
-}
-
--(NSInteger)isGroups:(Password *)newp {
-    NSInteger n=self.groups.count;
-    if(n==0){
-        return -1;
-    }
-    for (Group *g in self.groups){
-        if([g.groupName isEqualToString:newp.groupName])
-            return [self.groups indexOfObject:g];
-    }
-    return -1;
-}
-
-- (void)loadInitialData {
-    /*Group *group1=[[Group alloc] init];
-    group1.groupName=@"pay";
-    [self.groups addObject:group1];*/
-}
+@implementation PasswordListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.groups = [[NSMutableArray alloc] init];
-    [self loadInitialData];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -76,35 +33,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return [self.groups count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"ListPrototypeCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Group *group  = [self.groups objectAtIndex:indexPath.row];
-    cell.textLabel.text = group.groupName;
-    //NSLog(cell.textLabel.text);
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    self.group = [self.groups objectAtIndex:indexPath.row];
-    
+    return 0;
 }
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
     

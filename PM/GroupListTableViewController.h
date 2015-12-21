@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Group.h"
 
 @interface GroupListTableViewController : UITableViewController
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
+
+@property Group *group;
 
 @end
