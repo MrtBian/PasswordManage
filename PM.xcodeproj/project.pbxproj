@@ -18,9 +18,8 @@
 		182C2CE91C0DD30B00474DE7 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C2CE81C0DD30B00474DE7 /* AddViewController.m */; };
 		182C2CEC1C0DDCFF00474DE7 /* ONEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C2CEB1C0DDCFF00474DE7 /* ONEViewController.m */; };
 		182F9B6C1C1D89CB0030FC84 /* Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F9B6B1C1D89CB0030FC84 /* Password.m */; };
-		182F9B6F1C1D9B910030FC84 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F9B6E1C1D9B910030FC84 /* Group.m */; };
-		182F9B721C1D9C710030FC84 /* GroupListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F9B711C1D9C710030FC84 /* GroupListTableViewController.m */; };
 		18825D0B1C27E1B100D9B73F /* PasswordListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18825D0A1C27E1B100D9B73F /* PasswordListTableViewController.m */; };
+		189A29671C4916BB00206F70 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A29661C4916BB00206F70 /* PasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,12 +62,10 @@
 		182C2CEB1C0DDCFF00474DE7 /* ONEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONEViewController.m; sourceTree = "<group>"; };
 		182F9B6A1C1D89CB0030FC84 /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
 		182F9B6B1C1D89CB0030FC84 /* Password.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Password.m; sourceTree = "<group>"; };
-		182F9B6D1C1D9B910030FC84 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
-		182F9B6E1C1D9B910030FC84 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
-		182F9B701C1D9C710030FC84 /* GroupListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListTableViewController.h; sourceTree = "<group>"; };
-		182F9B711C1D9C710030FC84 /* GroupListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListTableViewController.m; sourceTree = "<group>"; };
 		18825D091C27E1B100D9B73F /* PasswordListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordListTableViewController.h; sourceTree = "<group>"; };
 		18825D0A1C27E1B100D9B73F /* PasswordListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordListTableViewController.m; sourceTree = "<group>"; };
+		189A29651C4916BB00206F70 /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		189A29661C4916BB00206F70 /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,12 +123,10 @@
 				182C2CBD1C0DBA9F00474DE7 /* Main.storyboard */,
 				18825D091C27E1B100D9B73F /* PasswordListTableViewController.h */,
 				18825D0A1C27E1B100D9B73F /* PasswordListTableViewController.m */,
+				189A29651C4916BB00206F70 /* PasswordViewController.h */,
+				189A29661C4916BB00206F70 /* PasswordViewController.m */,
 				182F9B6A1C1D89CB0030FC84 /* Password.h */,
 				182F9B6B1C1D89CB0030FC84 /* Password.m */,
-				182F9B6D1C1D9B910030FC84 /* Group.h */,
-				182F9B701C1D9C710030FC84 /* GroupListTableViewController.h */,
-				182F9B711C1D9C710030FC84 /* GroupListTableViewController.m */,
-				182F9B6E1C1D9B910030FC84 /* Group.m */,
 				182C2CE71C0DD30B00474DE7 /* AddViewController.h */,
 				182C2CEA1C0DDCFF00474DE7 /* ONEViewController.h */,
 				182C2CEB1C0DDCFF00474DE7 /* ONEViewController.m */,
@@ -302,11 +297,10 @@
 			files = (
 				18825D0B1C27E1B100D9B73F /* PasswordListTableViewController.m in Sources */,
 				182C2CBC1C0DBA9F00474DE7 /* ViewController.m in Sources */,
-				182F9B721C1D9C710030FC84 /* GroupListTableViewController.m in Sources */,
 				182C2CB91C0DBA9F00474DE7 /* AppDelegate.m in Sources */,
-				182F9B6F1C1D9B910030FC84 /* Group.m in Sources */,
 				182F9B6C1C1D89CB0030FC84 /* Password.m in Sources */,
 				182C2CE91C0DD30B00474DE7 /* AddViewController.m in Sources */,
+				189A29671C4916BB00206F70 /* PasswordViewController.m in Sources */,
 				182C2CEC1C0DDCFF00474DE7 /* ONEViewController.m in Sources */,
 				182C2CB61C0DBA9F00474DE7 /* main.m in Sources */,
 			);

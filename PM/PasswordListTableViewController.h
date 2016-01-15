@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Password.h"
 
 @interface PasswordListTableViewController : UITableViewController
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue;
+@property Password *password;
+//@property (nonatomic, assign) id<PasswordListTableViewControllerDelegate> delegate;
+
+@end
+
+@protocol PasswordListTableViewControllerDelegate
+@optional
+
+- (void)PasswordListTableViewController:
+
+(PasswordListTableViewController *)sender didSelectWithItem:(id)program;
 
 @end

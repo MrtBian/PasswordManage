@@ -7,16 +7,39 @@
 //
 
 #import "PasswordListTableViewController.h"
+#import "PasswordViewController.h"
+#import "Password.h"
+#import "AddViewController.h"
 
 @interface PasswordListTableViewController ()
+
+@property NSMutableArray *passwords;
 
 @end
 
 @implementation PasswordListTableViewController
 
+- (IBAction) unwindToList:(UIStoryboardSegue *)segue{
+    AddViewController *source=[segue sourceViewController];
+    Password *newp = source.newp;
+    if(newp!=nil){
+        [self.passwords addObject:newp];
+    }
+    [self.tableView reloadData];
+    
+}
+
+- (void)loadInitialData {
+    /*Group *group1=[[Group alloc] init];
+     group1.groupName=@"pay";
+     [self.groups addObject:group1];*/
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.passwords = [[NSMutableArray alloc] init];
+    [self loadInitialData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,14 +56,34 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.passwords count];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"ListPrototypeCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Password *password  = [self.passwords objectAtIndex:indexPath.row];
+    cell.textLabel.text = password.title;
+    //NSLog(cell.textLabel.text);
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    self.password = [self.passwords objectAtIndex:indexPath.row];
+    
+    PasswordViewController *detailView = [[PasswordViewController alloc]init];
+     [self.navigationController pushViewController:detailView animated:NO];
+
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
