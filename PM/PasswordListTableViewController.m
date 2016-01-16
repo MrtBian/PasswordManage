@@ -24,6 +24,9 @@
     Password *newp = source.newp;
     if(newp!=nil){
         [self.passwords addObject:newp];
+        NSString *docPath=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+        NSString *path=[docPath stringByAppendingPathComponent:@"passwords.list"];
+        [NSKeyedArchiver archiveRootObject:self.passwords toFile:path];
     }
     [self.tableView reloadData];
     
@@ -38,7 +41,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.passwords = [[NSMutableArray alloc] init];
+    NSString *docPath=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *path=[docPath stringByAppendingPathComponent:@"passwords.list"];
+    NSMutableArray *pass=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    self.passwords=[[NSMutableArray alloc] initWithArray:pass];
+//    self.passwords = [[NSMutableArray alloc] init];
     [self loadInitialData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

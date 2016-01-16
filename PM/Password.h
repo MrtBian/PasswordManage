@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface Password : NSObject
+@interface Password : NSObject<NSCoding>
 
 @property NSString *title;
 @property NSString *password;
 @property NSString *pid;
 @property NSString *groupName;
-@property (readonly) NSDate *creationDate;
+@property NSDate *creationDate;
 @end
